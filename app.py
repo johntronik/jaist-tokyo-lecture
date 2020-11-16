@@ -37,6 +37,7 @@ st.markdown('## 3. グーグルカレンダーを開く')
 st.markdown('[Google calendar](https://calendar.google.com/calendar/)', unsafe_allow_html=True)
 
 st.markdown('## 4. 新しいカレンダーを作成する')
+st.markdown('手順4は省略可能です(既にあるカレンダーにもインポートできます)')
 st.markdown('サイドバーの+ボタン -> 新しいカレンダーを作成')
 st.image(img1)
 st.image(img2)
