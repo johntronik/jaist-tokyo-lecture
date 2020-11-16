@@ -34,8 +34,7 @@ st.markdown('## 2. csvをダウンロードする')
 st.markdown(get_table_download_link(data), unsafe_allow_html=True)
 
 st.markdown('## 3. グーグルカレンダーを開く')
-if st.button('Open google calendar'):
-    webbrowser.open_new_tab('https://calendar.google.com/calendar/')
+st.markdown('[Google calendar](https://calendar.google.com/calendar/)', unsafe_allow_html=True)
 
 st.markdown('## 4. 新しいカレンダーを作成する')
 st.image(img1)
