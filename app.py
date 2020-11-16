@@ -16,10 +16,10 @@ def get_table_download_link(df):
 
 df = pd.read_csv('jaist-lecture.csv')
 img1 = Image.open('jl1.png')
-img2 = Image.open('jl1.png')
-img3 = Image.open('jl1.png')
-img4 = Image.open('jl1.png')
-img5 = Image.open('jl1.png')
+img2 = Image.open('jl2.png')
+img3 = Image.open('jl3.png')
+img4 = Image.open('jl4.png')
+img5 = Image.open('jl5.png')
 
 # 以下コンテンツ
 st.title('JAIST東京 授業カレンダー登録 2020')
