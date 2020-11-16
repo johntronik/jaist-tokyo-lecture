@@ -14,7 +14,7 @@ def get_table_download_link(df):
     href = f'<a href="data:file/csv;base64,{b64}" download="jaist_lecture.csv">Download csv file</a>'
     return href
 
-df = pd.read_csv('https://raw.githubusercontent.com/johntronik/jaist/master/jaist-lecture.csv')
+df = pd.read_csv('jaist-lecture.csv')
 img1 = Image.open('jl1.png')
 img2 = Image.open('jl1.png')
 img3 = Image.open('jl1.png')
@@ -38,15 +38,15 @@ if st.button('Open google calendar'):
     webbrowser.open_new_tab('https://calendar.google.com/calendar/')
 
 st.markdown('## 4. 新しいカレンダーを作成する')
-st.image()
+st.image(img1)
 st.markdown('サイドバーの+ボタン -> 新しいカレンダーを作成')
-st.image(Image.open('jaist_lecture/jl2.png'))
+st.image(img2)
 st.markdown('カレンダーに名前を付けて保存')
-st.image(Image.open('jaist_lecture/jl3.png'))
+st.image(img3)
 
 st.markdown('## 5. カレンダーに登録する')
 st.markdown('サイドバーの+ボタン -> インポート')
-st.image(Image.open('jaist_lecture/jl4.png'))
+st.image(img4)
 st.markdown('作ったカレンダーを選択し、csvをアップロード')
-st.image(Image.open('jaist_lecture/jl5.png'))
+st.image(img5)
 st.markdown('おわり')
