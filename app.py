@@ -11,7 +11,7 @@ def get_table_download_link(df):
     """
     csv = df.to_csv(index=False)
     b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-    href = f'<a href="data:file/csv;base64,{b64}" download="jaist_lecture.csv">Download csv file</a>'
+    href = f'<a href="data:file/csv;base64,{b64}" download="jaist_lecture_calendar.csv">Download csv file</a>'
     return href
 
 df = pd.read_csv('jaist-lecture.csv')
@@ -37,8 +37,8 @@ st.markdown('## 3. グーグルカレンダーを開く')
 st.markdown('[Google calendar](https://calendar.google.com/calendar/)', unsafe_allow_html=True)
 
 st.markdown('## 4. 新しいカレンダーを作成する')
-st.image(img1)
 st.markdown('サイドバーの+ボタン -> 新しいカレンダーを作成')
+st.image(img1)
 st.image(img2)
 st.markdown('カレンダーに名前を付けて保存')
 st.image(img3)
