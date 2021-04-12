@@ -22,10 +22,11 @@ img4 = Image.open('jl4.png')
 img5 = Image.open('jl5.png')
 
 # 以下コンテンツ
-st.title('JAIST東京 授業カレンダー登録 2020')
+st.title('JAIST東京 授業カレンダー登録 2021')
+st.markdown('4/12現在のデータです')
 st.markdown('## 1. 授業を選択する')
 ## 講義選択
-lectures = st.multiselect('', df['Subject'].unique().tolist(), ['I214-システム最適化'])
+lectures = st.multiselect('', df['Subject'].unique().tolist(), ['I485F-知覚情報処理特論'])
 ## 選択したデータを表示
 data = df[df['Subject'].isin(lectures)]
 st.table(data)
