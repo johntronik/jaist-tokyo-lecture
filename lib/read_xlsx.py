@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import openpyxl
 import pandas as pd
 from pandas.core.series import Series
@@ -37,8 +38,11 @@ def preprocess_xlsx(xlsx_fnames:List[str]) -> DataFrame:
             # drop header-row
             tmpdf = tmpdf[~tmpdf[['day','class']].isna().any(1)]
             # drop duplicates-columns
-            tmpdf2 = pd.DataFrame(columns=['year', 'month', 'day', '1限\n9:20 - 11:00', '2限\n11:10 - 12:50', 
-                    '3限\n13:50 - 15:30','4限\n15:40 - 17:20', '5限\n17:30 - 19:10', '6限\n18:30 - 20:10', '7限\n20:15 - 21:55'])
+            columns = ['year', 'month', 'day', '1限\n9:20 - 11:00', '2限\n11:10 - 12:50', '3限\n13:50 - 15:30',
+                       '4限\n15:40 - 17:20', '5限\n17:30 - 19:10', '6限\n18:30 - 20:10', '7限\n20:15 - 21:55']
+            if '変則時間割（石川の講義を配信）\n17:10 - 18:50' in tmpdf.columns:
+                columns += ['変則時間割（石川の講義を配信）\n17:10 - 18:50']
+            tmpdf2 = pd.DataFrame(columns=columns)
             for col in tmpdf2.columns:
                 if type(tmpdf[col])==Series:
                     tmpdf2[col] = tmpdf[col]
@@ -49,7 +53,10 @@ def preprocess_xlsx(xlsx_fnames:List[str]) -> DataFrame:
     df['year'] = df['year'].astype(int)
     df['month'] = df['month'].astype(int)
     df = df.drop_duplicates().set_index(['year', 'month', 'day'])
-    df.columns = [1, 2, 3, 4, 5, 6, 7]
+    if '変則時間割（石川の講義を配信）\n17:10 - 18:50' in df.columns:
+        df.columns = [1, 2, 3, 4, 5, 6, 7, 8]
+    else:
+        df.columns = [1, 2, 3, 4, 5, 6, 7]
     return df
 
 
