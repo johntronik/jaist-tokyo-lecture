@@ -27,7 +27,7 @@ img5 = Image.open('jl5.png')
 
 # 以下コンテンツ
 st.title('JAIST東京 授業カレンダー登録 2021')
-st.markdown('12/10現在のデータです')
+st.markdown('2022/03/07 現在のデータです')
 st.markdown(
     '**データのミス、コメント等は[Github](https://github.com/johntronik/jaist-tokyo-lecture)にお願いします**')
 st.markdown('## 1. 授業を選択する')
