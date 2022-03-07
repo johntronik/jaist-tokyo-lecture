@@ -33,7 +33,7 @@ st.markdown(
 st.markdown('## 1. 授業を選択する')
 # 講義選択
 lectures = st.multiselect(
-    '', df['Subject'].unique().tolist(), ['I485F-知覚情報処理特論'])
+    '', df['Subject'].unique().tolist(), ['I225-統計的信号処理特論'])
 # 選択したデータを表示
 data = df[df['Subject'].isin(lectures)]
 st.table(data)
